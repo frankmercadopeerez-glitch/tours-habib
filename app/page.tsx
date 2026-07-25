@@ -5,12 +5,17 @@ import { type Language, translatePage } from "./i18n";
 
 const whatsapp = "https://wa.me/573215055649";
 
-const Icon = ({ name }: { name: "arrow" | "check" | "star" | "whatsapp" | "menu" | "close" }) => {
+const WhatsAppLogo = () => (
+  <svg className="whatsapp-logo" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.075-.792.372-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347M12.045 21.433h-.004a9.38 9.38 0 0 1-4.779-1.307l-.342-.203-3.552.932.948-3.461-.223-.356a9.36 9.36 0 0 1-1.436-4.993c.002-5.17 4.209-9.377 9.388-9.377 2.506.001 4.861.978 6.632 2.75a9.32 9.32 0 0 1 2.748 6.633c-.002 5.17-4.209 9.377-9.38 9.382m7.985-17.37A11.21 11.21 0 0 0 12.05.754C5.842.754.792 5.804.79 12.012c0 1.984.518 3.92 1.503 5.625L.695 23.486l5.982-1.569a11.25 11.25 0 0 0 5.368 1.366h.005c6.206 0 11.256-5.05 11.259-11.258a11.18 11.18 0 0 0-3.279-7.962"/>
+  </svg>
+);
+
+const Icon = ({ name }: { name: "arrow" | "check" | "star" | "menu" | "close" }) => {
   const paths = {
     arrow: <><path d="M5 12h14M13 6l6 6-6 6" /></>,
     check: <path d="m5 12 4 4L19 6" />,
     star: <path d="m12 2.8 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-2.9L6.4 20l1.1-6.2L3 9.4l6.2-.9L12 2.8Z" />,
-    whatsapp: <><path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4A8 8 0 1 1 20 11.6Z" /><path d="M8.3 8.1c.2-.5.4-.5.7-.5h.5l.7 1.7c.1.3 0 .5-.1.7l-.5.6c-.2.2-.1.4 0 .6.7 1.3 1.8 2.3 3.2 2.9.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.8.8c.3.1.4.3.4.5 0 .3-.2 1.3-.7 1.8-.5.5-1.2.8-2 .7-1.1-.1-2.6-.6-4.4-2.2-2.1-1.8-3.4-4.1-3.5-5.2 0-.5.1-.9.3-1.2Z" /></>,
     menu: <><path d="M4 7h16M4 12h16M4 17h16" /></>,
     close: <><path d="m6 6 12 12M18 6 6 18" /></>,
   };
@@ -32,6 +37,17 @@ export default function Home() {
     translatePage(language);
     window.localStorage.setItem("tours-habib-language", language);
   }, [language, sent, menuOpen]);
+
+  const reviews = [
+    ["“Habib entendió exactamente lo que queríamos. El montaje, la música y la atención fueron increíbles. Se sintió exclusivo de principio a fin.”","Valentina R.","Cumpleaños privado"],
+    ["“La mejor noche de nuestro viaje a Cartagena. El yate era espectacular y no tuvimos que preocuparnos por absolutamente nada.”","Andrés M.","Fiesta en la bahía"],
+    ["“Organizaron nuestra cena a bordo con muchísimo gusto. La comida, el atardecer y cada detalle superaron lo que imaginábamos.”","Camila & Daniel","Cena especial"],
+    ["“La tripulación fue muy atenta y la ruta por las islas fue preciosa. Todo estaba listo cuando llegamos.”","Mariana G.","Día en las islas"],
+    ["“Celebramos la despedida de mi hermana y fue perfecta. Buena música, cocteles y un servicio excelente.”","Sofía T.","Despedida privada"],
+    ["“El proceso de reserva fue claro y rápido. Habib nos recomendó el bote ideal para nuestro grupo.”","Carlos P.","Alquiler privado"],
+    ["“La propuesta de matrimonio salió mejor de lo que soñé. Cuidaron cada detalle y el atardecer fue mágico.”","Felipe & Laura","Propuesta a bordo"],
+    ["“Una experiencia impecable desde la salida hasta el regreso. Sin duda lo repetiríamos en Cartagena.”","Natalia S.","Celebración con amigos"]
+  ];
 
   function sendForm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -157,12 +173,10 @@ export default function Home() {
 
       <section className="reviews section" id="resenas">
         <div className="section-heading"><div><p className="eyebrow gold">Lo que dicen nuestros invitados</p><h2>Recuerdos que siguen<br /><em>brillando después.</em></h2></div><div className="rating"><strong>5.0</strong><span>{[1,2,3,4,5].map(i=><Icon key={i} name="star" />)}</span><small>Experiencias memorables</small></div></div>
-        <div className="review-grid">
-          {[
-            ["“Habib entendió exactamente lo que queríamos. El montaje, la música y la atención fueron increíbles. Se sintió exclusivo de principio a fin.”","Valentina R.","Cumpleaños privado"],
-            ["“La mejor noche de nuestro viaje a Cartagena. El yate era espectacular y no tuvimos que preocuparnos por absolutamente nada.”","Andrés M.","Fiesta en la bahía"],
-            ["“Organizaron nuestra cena a bordo con muchísimo gusto. La comida, el atardecer y cada detalle superaron lo que imaginábamos.”","Camila & Daniel","Cena especial"]
-          ].map(([quote,name,type]) => <article key={name}><div className="stars">{[1,2,3,4,5].map(i=><Icon key={i} name="star" />)}</div><blockquote>{quote}</blockquote><div className="reviewer"><span>{name.charAt(0)}</span><p><b>{name}</b><small>{type}</small></p></div></article>)}
+        <div className="review-carousel" aria-label="Reseñas de clientes">
+          <div className="review-track">
+            {[...reviews, ...reviews].map(([quote,name,type],index) => <article key={`${name}-${index}`} aria-hidden={index >= reviews.length}><div className="stars">{[1,2,3,4,5].map(i=><Icon key={i} name="star" />)}</div><blockquote>{quote}</blockquote><div className="reviewer"><span>{name.charAt(0)}</span><p><b>{name}</b><small>{type}</small></p></div></article>)}
+          </div>
         </div>
         <p className="review-note">Reseñas de muestra · Reemplázalas por testimonios verificados a medida que los recibas.</p>
       </section>
@@ -172,7 +186,7 @@ export default function Home() {
           <p className="eyebrow gold">Tu celebración empieza aquí</p>
           <h2>Hablemos de<br /><em>tu próximo momento.</em></h2>
           <p>Cuéntanos qué tienes en mente. Habib te ayudará a crear una experiencia privada que se sienta exactamente como la imaginaste.</p>
-          <a className="whatsapp-contact" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20una%20experiencia`} target="_blank" rel="noreferrer"><i><Icon name="whatsapp" /></i><span><small>WhatsApp directo</small><strong>+57 321 505 5649</strong></span></a>
+          <a className="whatsapp-contact" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20una%20experiencia`} target="_blank" rel="noreferrer"><i><WhatsAppLogo /></i><span><small>WhatsApp directo</small><strong>+57 321 505 5649</strong></span></a>
           <div className="contact-meta"><span><small>Ubicación</small>Cartagena de Indias</span><span><small>Atención</small>Todos los días</span></div>
         </div>
         <form className="contact-form" onSubmit={sendForm}>
@@ -193,7 +207,7 @@ export default function Home() {
         <div className="footer-bottom"><span>© {new Date().getFullYear()} Tours Habib. Todos los derechos reservados.</span><span>Cartagena · Colombia</span></div>
       </footer>
 
-      <a className="floating-wa" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20información%20sobre%20sus%20experiencias`} target="_blank" rel="noreferrer" aria-label="Hablar con Habib por WhatsApp"><Icon name="whatsapp" /><span>Habla con Habib</span></a>
+      <a className="floating-wa" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20información%20sobre%20sus%20experiencias`} target="_blank" rel="noreferrer" aria-label="Hablar con Habib por WhatsApp"><WhatsAppLogo /><span>Habla con Habib</span></a>
     </main>
   );
 }

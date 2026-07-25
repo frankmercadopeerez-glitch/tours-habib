@@ -178,7 +178,6 @@ export default function Home() {
             {[...reviews, ...reviews].map(([quote,name,type],index) => <article key={`${name}-${index}`} aria-hidden={index >= reviews.length}><div className="stars">{[1,2,3,4,5].map(i=><Icon key={i} name="star" />)}</div><blockquote>{quote}</blockquote><div className="reviewer"><span>{name.charAt(0)}</span><p><b>{name}</b><small>{type}</small></p></div></article>)}
           </div>
         </div>
-        <p className="review-note">Reseñas de muestra · Reemplázalas por testimonios verificados a medida que los recibas.</p>
       </section>
 
       <section className="contact section" id="contacto">

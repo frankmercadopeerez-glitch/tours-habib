@@ -5,8 +5,12 @@ import "./responsive-bilingual.css";
 
 const display = Cormorant_Garamond({ variable: "--font-display", subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"] });
 const sans = Montserrat({ variable: "--font-sans", subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Tours Habib | Fiestas Privadas en Yates en Cartagena",
   description: "Fiestas privadas, alquiler de yates y botes, comida, bebidas y eventos exclusivos a bordo en Cartagena. Diseña tu experiencia con Habib.",
   keywords: ["fiestas en yates Cartagena", "alquiler de yates Cartagena", "eventos en yates", "botes Cartagena", "Tours Habib"],

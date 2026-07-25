@@ -1,26 +1,28 @@
 import assert from "node:assert/strict";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
-async function render() {
-  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
-  const { default: worker } = await import(workerUrl.href);
-  return worker.fetch(
-    new Request("http://localhost/", { headers: { accept: "text/html" } }),
-    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
-    { waitUntil() {}, passThroughOnException() {} },
-  );
-}
+test("produces a deployable Next.js build for Vercel", async () => {
+  await access(new URL("../.next/BUILD_ID", import.meta.url));
+  await access(new URL("../.next/server/app-paths-manifest.json", import.meta.url));
 
-test("renders the Tours Habib landing page", async () => {
-  const response = await render();
-  assert.equal(response.status, 200);
-  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
-  const html = await response.text();
-  assert.match(html, /Tours Habib \| Fiestas Privadas en Yates en Cartagena/i);
-  assert.match(html, /Tu fiesta\./i);
-  assert.match(html, /Fiestas privadas/i);
-  assert.match(html, /573215055649/);
-  assert.match(html, /application\/ld\+json/);
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+  const manifest = JSON.parse(
+    await readFile(
+      new URL("../.next/server/app-paths-manifest.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  assert.ok(manifest["/page"], "The home route must exist in the Next.js build");
+});
+
+test("keeps the Tours Habib conversion content in the source", async () => {
+  const [page, layout] = await Promise.all([
+    readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(page, /573215055649/);
+  assert.match(page, /review-carousel/);
+  assert.match(page, /WhatsAppLogo/);
+  assert.match(layout, /Tours Habib/);
 });

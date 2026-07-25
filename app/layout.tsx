@@ -12,12 +12,12 @@ const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Tours Habib | Fiestas Privadas en Yates en Cartagena",
-  description: "Fiestas privadas, alquiler de yates y botes, comida, bebidas y eventos exclusivos a bordo en Cartagena. Diseña tu experiencia con Habib.",
-  keywords: ["fiestas en yates Cartagena", "alquiler de yates Cartagena", "eventos en yates", "botes Cartagena", "Tours Habib"],
+  description: "Producción de fiestas privadas en yates en Cartagena con animación, anfitrionas, DJ, catering, bebidas y coordinación completa.",
+  keywords: ["fiestas privadas en yates Cartagena", "fiestas en yates Cartagena", "eventos privados en yates", "animación en yates", "Tours Habib"],
   icons: { icon: "/favicon.svg" },
   openGraph: {
     title: "Tours Habib | Tu fiesta. Tu yate. Tu mar.",
-    description: "Experiencias privadas de lujo en yates y botes en Cartagena.",
+    description: "Fiestas privadas de lujo en yates con animación, música, catering y bebidas en Cartagena.",
     locale: "es_CO",
     type: "website",
     images: [{ url: "/og.png", width: 1730, height: 909, alt: "Tours Habib, fiestas privadas en yates en Cartagena" }],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Tours Habib | Tu fiesta. Tu yate. Tu mar.",
-    description: "Experiencias privadas de lujo en yates y botes en Cartagena.",
+    description: "Fiestas privadas de lujo en yates con animación, música, catering y bebidas en Cartagena.",
     images: ["/og.png"],
   },
 };
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@context": "https://schema.org",
     "@type": "TouristInformationCenter",
     name: "Tours Habib",
-    description: "Fiestas privadas, alquiler de yates y botes y eventos a bordo en Cartagena.",
+    description: "Producción de fiestas privadas en yates con animación, anfitrionas, música, catering y bebidas en Cartagena.",
     telephone: "+573215055649",
     areaServed: "Cartagena de Indias, Colombia",
     address: { "@type": "PostalAddress", addressLocality: "Cartagena de Indias", addressCountry: "CO" },

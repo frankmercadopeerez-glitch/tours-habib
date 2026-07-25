@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { type Language, translatePage } from "./i18n";
 
 const whatsapp = "https://wa.me/573215055649";
 
@@ -19,6 +20,18 @@ const Icon = ({ name }: { name: "arrow" | "check" | "star" | "whatsapp" | "menu"
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [sent, setSent] = useState(false);
+  const [language, setLanguage] = useState<Language>("es");
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("tours-habib-language") as Language | null;
+    const detected: Language = navigator.language.toLowerCase().startsWith("en") ? "en" : "es";
+    setLanguage(saved === "es" || saved === "en" ? saved : detected);
+  }, []);
+
+  useEffect(() => {
+    translatePage(language);
+    window.localStorage.setItem("tours-habib-language", language);
+  }, [language, sent, menuOpen]);
 
   function sendForm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -45,6 +58,11 @@ export default function Home() {
           <a href="#contacto" onClick={closeMenu}>Contacto</a>
         </nav>
         <a className="button button-small header-cta" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20una%20experiencia%20en%20yate`} target="_blank" rel="noreferrer">Cotizar ahora</a>
+        <div className="language-switch" role="group" aria-label="Language selector">
+          <button className={language === "es" ? "active" : ""} onClick={() => setLanguage("es")} aria-pressed={language === "es"}>ES</button>
+          <span>/</span>
+          <button className={language === "en" ? "active" : ""} onClick={() => setLanguage("en")} aria-pressed={language === "en"}>EN</button>
+        </div>
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen}>
           <Icon name={menuOpen ? "close" : "menu"} />
         </button>

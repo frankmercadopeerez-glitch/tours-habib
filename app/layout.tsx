@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Montserrat } from "next/font/google";
 import "./globals.css";
+import "./responsive-bilingual.css";
 
 const display = Cormorant_Garamond({ variable: "--font-display", subsets: ["latin"], weight: ["400", "500", "600", "700"], style: ["normal", "italic"] });
 const sans = Montserrat({ variable: "--font-sans", subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
@@ -35,5 +36,5 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     areaServed: "Cartagena de Indias, Colombia",
     address: { "@type": "PostalAddress", addressLocality: "Cartagena de Indias", addressCountry: "CO" },
   };
-  return <html lang="es"><body className={`${display.variable} ${sans.variable}`}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />{children}</body></html>;
+  return <html lang="es" suppressHydrationWarning><body className={`${display.variable} ${sans.variable}`}><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />{children}</body></html>;
 }

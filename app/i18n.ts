@@ -1,0 +1,46 @@
+export type Language = "es" | "en";
+
+const pairs: [string, string][] = [
+  ["Experiencias","Experiences"],["Qué incluye","What's included"],["Galería","Gallery"],["Reseñas","Reviews"],["Contacto","Contact"],["Cotizar ahora","Get a quote"],
+  ["Abrir menú","Open menu"],["Cerrar menú","Close menu"],["Tu fiesta.","Your party."],["Tu yate.","Your yacht."],["Tu mar.","Your sea."],
+  ["Creamos celebraciones privadas a bordo donde cada detalle se siente extraordinario. Tú traes a tu gente. Nosotros hacemos que la noche sea inolvidable.","We create private celebrations on board where every detail feels extraordinary. You bring your favorite people. We make the night unforgettable."],
+  ["Diseñar mi experiencia","Design my experience"],["Descubrir experiencias","Explore experiences"],["100% privadas","100% private"],["Servicio","Service"],["Personalizado","Tailored"],["Destino","Destination"],["Cartagena & Islas","Cartagena & Islands"],
+  ["La experiencia Habib","The Habib experience"],["No alquilamos un yate.","We don't just rent a yacht."],["Creamos tu mejor historia.","We create your best story."],
+  ["Desde una tarde bajo el sol hasta una fiesta nocturna frente a la ciudad amurallada, diseñamos cada salida alrededor de lo que quieres celebrar.","From a sun-filled afternoon to a night party overlooking the Walled City, we design every cruise around what you want to celebrate."],
+  ["Yate, tripulación, ambientación, música, comida y bebidas: un solo equipo cuidando cada momento.","Yacht, crew, styling, music, food and drinks: one team taking care of every moment."],
+  ["Hecho a tu medida","Made for you"],["Elige cómo quieres","Choose how you want"],["vivir el Caribe.","to experience the Caribbean."],
+  ["Experiencias privadas, atención cercana y una selección de embarcaciones para cada tipo de celebración.","Private experiences, attentive service and a curated fleet for every kind of celebration."],
+  ["Experiencia insignia","Signature experience"],["Fiestas privadas","Private parties"],["en yate","on a yacht"],["DJ, ambientación, bebidas y la bahía de Cartagena como escenario.","DJ, styling, drinks and Cartagena Bay as your backdrop."],["Quiero celebrar","I want to celebrate"],
+  ["Alquiler de","Luxury yacht"],["yates y botes","and boat rentals"],["Salidas privadas por la bahía y las Islas del Rosario, a tu propio ritmo.","Private cruises through the bay and Rosario Islands, at your own pace."],["Ver opciones","View options"],
+  ["Eventos, comida","Events, food"],["y bebidas","and drinks"],["Cumpleaños, despedidas, cenas, propuestas y momentos que merecen algo especial.","Birthdays, bachelor parties, dinners, proposals and moments that deserve something special."],["Crear mi evento","Create my event"],
+  ["Nos ocupamos de todo","We take care of everything"],["Detalles impecables.","Impeccable details."],["Cero preocupaciones.","Zero worries."],["Coordinamos tu experiencia de principio a fin para que solo tengas que llegar y disfrutar.","We coordinate your experience from beginning to end, so all you have to do is arrive and enjoy."],
+  ["Yate o bote privado","Private yacht or boat"],["Capitán y tripulación","Captain and crew"],["Hielo y agua a bordo","Ice and water on board"],["Sistema de sonido","Sound system"],["Decoración personalizada","Custom styling"],["Menú y catering","Menu and catering"],["Bebidas y coctelería","Drinks and cocktails"],["DJ y entretenimiento","DJ and entertainment"],["Personalizar mi plan","Customize my plan"],
+  ["Así de fácil","It's this easy"],["Del primer mensaje","From the first message"],["al momento perfecto.","to the perfect moment."],["Cuéntanos tu idea","Tell us your idea"],["Fecha, número de invitados y qué quieres celebrar.","Your date, number of guests and what you want to celebrate."],["Diseñamos tu plan","We design your plan"],["Seleccionamos embarcación, ruta y detalles a tu medida.","We select the boat, route and details tailored to you."],["Confirma y celebra","Confirm and celebrate"],["Reserva tu fecha y llega listo para vivirlo todo.","Reserve your date and arrive ready to enjoy it all."],
+  ["Momentos Habib","Habib moments"],["Cartagena se vive","Cartagena is best"],["mejor desde el mar.","experienced from the sea."],
+  ["Lo que dicen nuestros invitados","What our guests say"],["Recuerdos que siguen","Memories that keep"],["brillando después.","shining afterwards."],["Experiencias memorables","Memorable experiences"],
+  ["“Habib entendió exactamente lo que queríamos. El montaje, la música y la atención fueron increíbles. Se sintió exclusivo de principio a fin.”","“Habib understood exactly what we wanted. The setup, music and service were incredible. It felt exclusive from beginning to end.”"],
+  ["“La mejor noche de nuestro viaje a Cartagena. El yate era espectacular y no tuvimos que preocuparnos por absolutamente nada.”","“The best night of our Cartagena trip. The yacht was spectacular and we didn't have to worry about a single thing.”"],
+  ["“Organizaron nuestra cena a bordo con muchísimo gusto. La comida, el atardecer y cada detalle superaron lo que imaginábamos.”","“They arranged our dinner on board beautifully. The food, sunset and every detail exceeded what we imagined.”"],
+  ["Cumpleaños privado","Private birthday"],["Fiesta en la bahía","Bay party"],["Cena especial","Special dinner"],["Reseñas de muestra · Reemplázalas por testimonios verificados a medida que los recibas.","Sample reviews · Replace them with verified testimonials as you receive them."],
+  ["Tu celebración empieza aquí","Your celebration starts here"],["Hablemos de","Let's talk about"],["tu próximo momento.","your next moment."],["Cuéntanos qué tienes en mente. Habib te ayudará a crear una experiencia privada que se sienta exactamente como la imaginaste.","Tell us what you have in mind. Habib will help you create a private experience that feels exactly as you imagined it."],
+  ["WhatsApp directo","Direct WhatsApp"],["Ubicación","Location"],["Atención","Availability"],["Todos los días","Every day"],["Nombre completo","Full name"],["Fecha del evento","Event date"],["Número de invitados","Number of guests"],["Tipo de experiencia","Experience type"],["Selecciona una opción","Select an option"],["Fiesta privada en yate","Private yacht party"],["Alquiler de yate o bote","Yacht or boat rental"],["Evento con comida y bebidas","Event with food and drinks"],["Otra experiencia","Another experience"],["Enviar por WhatsApp","Send via WhatsApp"],
+  ["WhatsApp abierto. Envía el mensaje para completar tu solicitud.","WhatsApp is open. Send the message to complete your request."],["Al enviar, abriremos WhatsApp con los datos de tu solicitud.","When you submit, we'll open WhatsApp with your request details."],
+  ["Experiencias privadas en yates y botes en Cartagena de Indias.","Private yacht and boat experiences in Cartagena de Indias."],["Todos los derechos reservados.","All rights reserved."],["Habla con Habib","Chat with Habib"],["Hablar con Habib por WhatsApp","Chat with Habib on WhatsApp"],["Tu nombre","Your name"],["Ej. 12","E.g. 12"],["¿Qué quieres celebrar? ¿Tienes alguna idea especial?","What would you like to celebrate? Do you have a special idea?"],
+  ["Fiesta privada nocturna en un yate frente a Cartagena","Private night yacht party overlooking Cartagena"],["Bote de lujo navegando por las Islas del Rosario","Luxury boat cruising through the Rosario Islands"],["Cena y celebración privada a bordo de un yate","Private dinner and celebration aboard a yacht"],["Montaje gastronómico premium en un yate","Premium dining setup aboard a yacht"],["Amigos celebrando al atardecer en un yate en Cartagena","Friends celebrating at sunset on a yacht in Cartagena"],["Fiesta nocturna en yate con Cartagena iluminada","Night yacht party with Cartagena illuminated"],["Bote navegando en aguas del Caribe","Boat cruising Caribbean waters"]
+];
+
+const esToEn = Object.fromEntries(pairs);
+const enToEs = Object.fromEntries(pairs.map(([es,en]) => [en,es]));
+function translated(value: string, language: Language) {
+  const dictionary = language === "en" ? esToEn : enToEs;
+  const leading = value.match(/^\s*/)?.[0] ?? "", trailing = value.match(/\s*$/)?.[0] ?? "", core = value.trim();
+  return core && dictionary[core] ? `${leading}${dictionary[core]}${trailing}` : value;
+}
+export function translatePage(language: Language) {
+  document.documentElement.lang = language;
+  document.title = language === "en" ? "Tours Habib | Private Yacht Parties in Cartagena" : "Tours Habib | Fiestas Privadas en Yates en Cartagena";
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node = walker.nextNode();
+  while(node){ node.nodeValue = translated(node.nodeValue ?? "", language); node = walker.nextNode(); }
+  document.querySelectorAll<HTMLElement>("[placeholder],[aria-label],[alt]").forEach(el => ["placeholder","aria-label","alt"].forEach(attr => { const value=el.getAttribute(attr); if(value) el.setAttribute(attr,translated(value,language)); }));
+}

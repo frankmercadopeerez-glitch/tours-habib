@@ -11,16 +11,16 @@ const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Tours Habib | Fiestas Privadas en Yates en Cartagena",
-  description: "Producción de fiestas privadas en yates en Cartagena con animación, anfitrionas, DJ, catering, bebidas y coordinación completa.",
-  keywords: ["fiestas privadas en yates Cartagena", "fiestas en yates Cartagena", "eventos privados en yates", "animación en yates", "Tours Habib"],
+  title: "Tours Habib | Fiestas Privadas en Cartagena",
+  description: "Producción de fiestas privadas de lujo en yates, islas, fincas y cabañas en Cartagena con DJ, animación, catering, bebidas y coordinación completa.",
+  keywords: ["fiestas privadas Cartagena", "fiestas en yates Cartagena", "fiestas en islas Cartagena", "fiestas en fincas Cartagena", "fiestas en cabañas Cartagena", "Tours Habib"],
   icons: { icon: "/favicon.svg" },
   openGraph: {
-    title: "Tours Habib | Tu fiesta. Tu yate. Tu mar.",
-    description: "Fiestas privadas de lujo en yates con animación, música, catering y bebidas en Cartagena.",
+    title: "Tours Habib | Tu fiesta. Tu escenario. Tu momento.",
+    description: "Fiestas privadas de lujo en yates, islas, fincas y cabañas con animación, música, catering y bebidas en Cartagena.",
     locale: "es_CO",
     type: "website",
-    images: [{ url: "/og.png", width: 1730, height: 909, alt: "Tours Habib, fiestas privadas en yates en Cartagena" }],
+    images: [{ url: "/og.png", width: 1730, height: 909, alt: "Tours Habib, fiestas privadas en Cartagena" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     "@context": "https://schema.org",
     "@type": "TouristInformationCenter",
     name: "Tours Habib",
-    description: "Producción de fiestas privadas en yates con animación, anfitrionas, música, catering y bebidas en Cartagena.",
+    description: "Producción de fiestas privadas en yates, islas, fincas y cabañas con animación, anfitriones, música, catering y bebidas en Cartagena.",
     telephone: "+573215055649",
     areaServed: "Cartagena de Indias, Colombia",
     address: { "@type": "PostalAddress", addressLocality: "Cartagena de Indias", addressCountry: "CO" },

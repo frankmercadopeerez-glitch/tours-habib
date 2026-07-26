@@ -24,9 +24,13 @@ test("keeps the Tours Habib conversion content in the source", async () => {
   assert.match(page, /573215055649/);
   assert.match(page, /review-carousel/);
   assert.match(page, /WhatsAppLogo/);
-  assert.match(page, /Producción de/);
-  assert.match(page, /Anfitrionas y animadores/);
-  assert.match(page, /party-hosts\.png/);
+  assert.match(page, /yates, islas, fincas y cabañas/);
+  assert.match(page, /Anfitriones y animadores/);
+  assert.match(page, /hero-private-party\.png|hero-image/);
+  assert.match(page, /island-party\.png/);
+  assert.match(page, /finca-party\.png/);
+  assert.match(page, /cabin-party\.png/);
   assert.doesNotMatch(page, /Alquiler de yates y botes/);
   assert.match(layout, /Tours Habib/);
+  assert.match(layout, /fiestas privadas de lujo en yates, islas, fincas y cabañas/i);
 });

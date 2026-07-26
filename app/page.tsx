@@ -52,7 +52,7 @@ export default function Home() {
   function sendForm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const message = `Hola Habib, quiero cotizar una fiesta privada en yate.%0A%0ANombre: ${data.get("nombre")}%0AFecha: ${data.get("fecha") || "Por definir"}%0AInvitados: ${data.get("invitados")}%0ATipo de fiesta: ${data.get("experiencia")}%0AMensaje: ${data.get("mensaje") || "Quiero conocer opciones y disponibilidad."}`;
+    const message = `Hola Habib, quiero cotizar una fiesta privada en Cartagena.%0A%0ANombre: ${data.get("nombre")}%0AFecha: ${data.get("fecha") || "Por definir"}%0AInvitados: ${data.get("invitados")}%0ATipo de fiesta: ${data.get("experiencia")}%0AMensaje: ${data.get("mensaje") || "Quiero conocer opciones y disponibilidad."}`;
     setSent(true);
     window.open(`${whatsapp}?text=${message}`, "_blank", "noopener,noreferrer");
   }
@@ -64,7 +64,7 @@ export default function Home() {
       <header className="header">
         <a className="brand" href="#inicio" aria-label="Tours Habib, inicio">
           <span className="brand-mark">TH</span>
-          <span><b>TOURS HABIB</b><small>PRIVATE YACHT PARTIES</small></span>
+          <span><b>TOURS HABIB</b><small>PRIVATE PARTY EXPERIENCES</small></span>
         </a>
         <nav className={menuOpen ? "nav open" : "nav"} aria-label="Navegación principal">
           <a href="#experiencias" onClick={closeMenu}>Experiencias</a>
@@ -73,7 +73,7 @@ export default function Home() {
           <a href="#resenas" onClick={closeMenu}>Reseñas</a>
           <a href="#contacto" onClick={closeMenu}>Contacto</a>
         </nav>
-        <a className="button button-small header-cta" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20una%20fiesta%20privada%20en%20yate`} target="_blank" rel="noreferrer">Cotizar mi fiesta</a>
+        <a className="button button-small header-cta" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20una%20fiesta%20privada%20en%20Cartagena`} target="_blank" rel="noreferrer">Cotizar mi fiesta</a>
         <div className="language-switch" role="group" aria-label="Language selector">
           <button className={language === "es" ? "active" : ""} onClick={() => setLanguage("es")} aria-pressed={language === "es"}>ES</button>
           <span>/</span>
@@ -89,16 +89,16 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-content">
           <p className="eyebrow"><span /> Cartagena · Colombia</p>
-          <h1>Tu fiesta.<br />Tu yate. <em>Tu mar.</em></h1>
-          <p className="hero-copy">Producimos fiestas privadas en yates donde todo está pensado para sorprender: ambiente, animación, música, anfitrionas, comida y bebidas. Tú traes a tu gente. Nosotros hacemos que la noche sea inolvidable.</p>
+          <h1>Tu fiesta.<br /><em>Tu escenario. Tu momento.</em></h1>
+          <p className="hero-copy">Producimos fiestas privadas en yates, islas, fincas y cabañas donde todo está pensado para sorprender: ambiente, animación, música, anfitriones, comida y bebidas. Tú eliges el escenario. Nosotros hacemos que la celebración sea inolvidable.</p>
           <div className="hero-actions">
-            <a className="button" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20organizar%20una%20fiesta%20privada%20en%20yate`} target="_blank" rel="noreferrer">Diseñar mi experiencia <Icon name="arrow" /></a>
+            <a className="button" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20organizar%20una%20fiesta%20privada%20en%20Cartagena`} target="_blank" rel="noreferrer">Diseñar mi fiesta <Icon name="arrow" /></a>
             <a className="text-link" href="#experiencias">Descubrir experiencias <span>↓</span></a>
           </div>
           <div className="hero-proof">
-            <div><strong>Experiencias</strong><span>100% privadas</span></div>
-            <div><strong>Servicio</strong><span>Personalizado</span></div>
-            <div><strong>Destino</strong><span>Cartagena & Islas</span></div>
+            <div><strong>Escenarios</strong><span>Yates · Islas · Fincas</span></div>
+            <div><strong>Servicio</strong><span>Producción completa</span></div>
+            <div><strong>Destino</strong><span>Cartagena & alrededores</span></div>
           </div>
         </div>
         <span className="scroll-line" />
@@ -107,37 +107,43 @@ export default function Home() {
       <section className="intro section">
         <p className="eyebrow gold">La experiencia Habib</p>
         <div className="intro-grid">
-          <h2>Creamos la fiesta privada.<br /><em>Tú vienes a celebrarla.</em></h2>
+          <h2>Creamos tu fiesta privada.<br /><em>Tú eliges el escenario.</em></h2>
           <div>
-            <p>Convertimos el yate en el escenario de una celebración diseñada alrededor de tu grupo, tu estilo y la energía que quieres vivir.</p>
-            <p>Coordinamos anfitrionas y animadores adultos, DJ, ambientación, coctelería, catering, seguridad y cada detalle para que la fiesta fluya de principio a fin.</p>
+            <p>Transformamos yates, islas, fincas y cabañas en el escenario de una celebración diseñada alrededor de tu grupo, tu estilo y la energía que quieres vivir.</p>
+            <p>Coordinamos el lugar, anfitriones y animadores adultos, DJ, ambientación, coctelería, catering, transporte, seguridad y cada detalle para que la fiesta fluya de principio a fin.</p>
           </div>
         </div>
       </section>
 
       <section className="services section" id="experiencias">
         <div className="section-heading">
-          <div><p className="eyebrow gold">Producción a tu medida</p><h2>Todo lo que tu fiesta<br /><em>necesita para brillar.</em></h2></div>
-          <p>Diseñamos la celebración completa y reunimos al equipo, el ambiente y los servicios que harán inolvidable tu noche en Cartagena.</p>
+          <div><p className="eyebrow gold">Producción a tu medida</p><h2>Un concepto.<br /><em>Infinitos escenarios.</em></h2></div>
+          <p>Diseñamos la celebración completa en el escenario que prefieras y reunimos al equipo, el ambiente y los servicios que harán inolvidable tu experiencia en Cartagena.</p>
         </div>
         <div className="service-grid">
-          <article className="service-card featured">
+          <article className="service-card">
             <img src="/images/night-party.png" alt="Fiesta privada nocturna en un yate frente a Cartagena" />
             <div className="card-overlay" />
             <span className="number">01</span><span className="tag">Experiencia insignia</span>
-            <div className="card-copy"><h3>Producción de<br />fiestas privadas</h3><p>Concepto, música, ambientación y coordinación completa para crear una fiesta extraordinaria a bordo.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20una%20fiesta%20privada%20en%20yate`} target="_blank" rel="noreferrer">Quiero celebrar <Icon name="arrow" /></a></div>
+            <div className="card-copy"><h3>Fiestas privadas<br />en yates</h3><p>Una producción de lujo sobre el mar con DJ, animación, catering, bebidas y coordinación completa.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20privada%20en%20yate`} target="_blank" rel="noreferrer">Celebrar en el mar <Icon name="arrow" /></a></div>
           </article>
           <article className="service-card">
-            <img src="/images/party-hosts.png" alt="Anfitrionas adultas animando una fiesta privada en un yate en Cartagena" />
+            <img src="/images/island-party.png" alt="Fiesta privada de lujo en una isla cerca de Cartagena" />
             <div className="card-overlay" />
             <span className="number">02</span>
-            <div className="card-copy"><h3>Animación y<br />anfitrionas</h3><p>Animadores y anfitrionas adultas, seleccionados según el estilo de tu grupo para mantener la mejor energía.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20con%20animacion%20y%20anfitrionas%20en%20yate`} target="_blank" rel="noreferrer">Crear el ambiente <Icon name="arrow" /></a></div>
+            <div className="card-copy"><h3>Fiestas privadas<br />en islas</h3><p>Playas reservadas, música, cócteles y montaje tropical para celebrar con total libertad frente al Caribe.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20privada%20en%20una%20isla`} target="_blank" rel="noreferrer">Celebrar en una isla <Icon name="arrow" /></a></div>
           </article>
           <article className="service-card">
-            <img src="/images/private-event.png" alt="Cena y celebración privada a bordo de un yate" />
+            <img src="/images/finca-party.png" alt="Fiesta privada con piscina en una finca de lujo en Cartagena" />
             <div className="card-overlay" />
             <span className="number">03</span>
-            <div className="card-copy"><h3>Catering y<br />barra premium</h3><p>Menús, pasabocas, coctelería y bebidas elegidos para acompañar el ritmo y el estilo de tu celebración.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20catering%20y%20bebidas%20para%20mi%20fiesta%20privada%20en%20yate`} target="_blank" rel="noreferrer">Diseñar el menú <Icon name="arrow" /></a></div>
+            <div className="card-copy"><h3>Fiestas privadas<br />en fincas</h3><p>Piscina, zonas amplias y una producción completa para cumpleaños, despedidas y celebraciones sin límites.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20privada%20en%20una%20finca`} target="_blank" rel="noreferrer">Celebrar en una finca <Icon name="arrow" /></a></div>
+          </article>
+          <article className="service-card">
+            <img src="/images/cabin-party.png" alt="Fiesta privada nocturna en una cabaña tropical de lujo" />
+            <div className="card-overlay" />
+            <span className="number">04</span>
+            <div className="card-copy"><h3>Fiestas privadas<br />en cabañas</h3><p>Un ambiente íntimo entre naturaleza, iluminación, música, gastronomía y alojamiento para vivir la noche a tu ritmo.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20privada%20en%20una%20cabana`} target="_blank" rel="noreferrer">Celebrar en una cabaña <Icon name="arrow" /></a></div>
           </article>
         </div>
       </section>
@@ -145,11 +151,11 @@ export default function Home() {
       <section className="included section" id="incluye">
         <div className="included-photo"><img src="/images/party-production-catering.png" alt="Fiesta privada producida por Tours Habib con animación, coctelería y catering" /><span className="frame frame-one" /><span className="frame frame-two" /></div>
         <div className="included-copy">
-          <p className="eyebrow gold">Nos ocupamos de todo</p>
+          <p className="eyebrow gold">Donde quieras celebrar</p>
           <h2>Detalles impecables.<br /><em>Cero preocupaciones.</em></h2>
-          <p className="lead">Producimos tu fiesta de principio a fin para que solo tengas que llegar, brindar y disfrutar con tus invitados.</p>
+          <p className="lead">Producimos tu fiesta en el escenario ideal, de principio a fin, para que solo tengas que llegar, brindar y disfrutar con tus invitados.</p>
           <div className="check-grid">
-            {["Yate elegido para tu fiesta","Capitán y tripulación","Anfitrionas y animadores","DJ y sistema de sonido","Decoración personalizada","Menú y catering","Bebidas y coctelería","Coordinación del evento"].map(item => <span key={item}><i><Icon name="check" /></i>{item}</span>)}
+            {["Selección del escenario","Logística y transporte","Anfitriones y animadores","DJ y sistema de sonido","Decoración personalizada","Menú y catering","Bebidas y coctelería","Coordinación del evento"].map(item => <span key={item}><i><Icon name="check" /></i>{item}</span>)}
           </div>
           <a className="button button-outline" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20personalizar%20mi%20experiencia`} target="_blank" rel="noreferrer">Personalizar mi plan <Icon name="arrow" /></a>
         </div>
@@ -158,16 +164,17 @@ export default function Home() {
       <section className="process section">
         <div className="section-heading compact"><div><p className="eyebrow gold">Así de fácil</p><h2>Del primer mensaje<br /><em>al momento perfecto.</em></h2></div></div>
         <div className="steps">
-          {[["01","Cuéntanos tu idea","Fecha, invitados, ocasión y el tipo de ambiente que quieres vivir."],["02","Producimos tu fiesta","Creamos el concepto y coordinamos yate, animación, música, catering y bebidas."],["03","Confirma y celebra","Reserva tu fecha y llega listo para disfrutarlo todo."]].map(([n,t,d]) => <article key={n}><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div></article>)}
+          {[["01","Cuéntanos tu idea","Fecha, invitados, ocasión y el tipo de ambiente que quieres vivir."],["02","Elegimos tu escenario","Creamos el concepto y coordinamos el lugar, la logística, animación, música, catering y bebidas."],["03","Confirma y celebra","Reserva tu fecha y llega listo para disfrutarlo todo."]].map(([n,t,d]) => <article key={n}><span>{n}</span><div><h3>{t}</h3><p>{d}</p></div></article>)}
         </div>
       </section>
 
       <section className="gallery" id="galeria">
-        <div className="gallery-heading"><p className="eyebrow">Momentos Habib</p><h2>Cartagena se vive<br /><em>mejor desde el mar.</em></h2></div>
+        <div className="gallery-heading"><p className="eyebrow">Momentos Habib</p><h2>Cada escenario cambia.<br /><em>La energía permanece.</em></h2></div>
         <div className="gallery-grid">
-          <img className="gallery-main" src="/images/hero-yacht-party.png" alt="Amigos celebrando al atardecer en un yate en Cartagena" />
+          <img src="/images/hero-yacht-party.png" alt="Amigos celebrando al atardecer en un yate en Cartagena" />
           <img src="/images/night-party.png" alt="Fiesta nocturna en yate con Cartagena iluminada" />
-          <img src="/images/caribbean-yacht.png" alt="Yate navegando en aguas del Caribe" />
+          <img src="/images/party-hosts.png" alt="Animación premium en una fiesta privada" />
+          <img src="/images/private-event.png" alt="Catering y celebración privada producida por Tours Habib" />
         </div>
       </section>
 
@@ -184,13 +191,13 @@ export default function Home() {
         <div className="contact-copy">
           <p className="eyebrow gold">Tu celebración empieza aquí</p>
           <h2>Hablemos de<br /><em>tu próximo momento.</em></h2>
-          <p>Cuéntanos cómo imaginas la fiesta. Habib organizará el ambiente, el entretenimiento, el catering, las bebidas y todo lo necesario para hacerla realidad.</p>
+          <p>Cuéntanos cómo imaginas la fiesta y dónde quieres vivirla. Habib organizará el escenario, la logística, el entretenimiento, el catering, las bebidas y todo lo necesario para hacerla realidad.</p>
           <a className="whatsapp-contact" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20una%20experiencia`} target="_blank" rel="noreferrer"><i><WhatsAppLogo /></i><span><small>WhatsApp directo</small><strong>+57 321 505 5649</strong></span></a>
           <div className="contact-meta"><span><small>Ubicación</small>Cartagena de Indias</span><span><small>Atención</small>Todos los días</span></div>
         </div>
         <form className="contact-form" onSubmit={sendForm}>
           <div className="field-row"><label>Nombre completo<input required name="nombre" placeholder="Tu nombre" /></label><label>Fecha del evento<input name="fecha" type="date" /></label></div>
-          <div className="field-row"><label>Número de invitados<input required min="1" name="invitados" type="number" placeholder="Ej. 12" /></label><label>Tipo de experiencia<select name="experiencia" defaultValue=""><option value="" disabled>Selecciona una opción</option><option>Fiesta privada en yate</option><option>Fiesta con animación y anfitrionas</option><option>Catering y bebidas a bordo</option><option>Otra celebración privada</option></select></label></div>
+          <div className="field-row"><label>Número de invitados<input required min="1" name="invitados" type="number" placeholder="Ej. 12" /></label><label>Tipo de experiencia<select name="experiencia" defaultValue=""><option value="" disabled>Selecciona una opción</option><option>Fiesta privada en yate</option><option>Fiesta privada en isla</option><option>Fiesta privada en finca</option><option>Fiesta privada en cabaña</option><option>Quiero que me recomienden un escenario</option></select></label></div>
           <label>Cuéntanos tu idea<textarea name="mensaje" rows={4} placeholder="¿Qué quieres celebrar? ¿Tienes alguna idea especial?" /></label>
           <button className="button form-button" type="submit">Enviar por WhatsApp <Icon name="arrow" /></button>
           <small className="privacy">{sent ? "WhatsApp abierto. Envía el mensaje para completar tu solicitud." : "Al enviar, abriremos WhatsApp con los datos de tu solicitud."}</small>
@@ -200,13 +207,13 @@ export default function Home() {
       <footer>
         <div className="footer-main">
           <a className="brand footer-brand" href="#inicio"><span className="brand-mark">TH</span><span><b>TOURS HABIB</b><small>PRIVATE YACHT PARTIES</small></span></a>
-          <p>Producción de fiestas privadas en yates en Cartagena de Indias.</p>
+          <p>Producción de fiestas privadas en yates, islas, fincas y cabañas en Cartagena de Indias.</p>
           <nav><a href="#experiencias">Experiencias</a><a href="#incluye">Qué incluye</a><a href="#galeria">Galería</a><a href="#resenas">Reseñas</a><a href="#contacto">Contacto</a></nav>
         </div>
         <div className="footer-bottom"><span>© {new Date().getFullYear()} Tours Habib. Todos los derechos reservados.</span><span>Cartagena · Colombia</span></div>
       </footer>
 
-      <a className="floating-wa" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20información%20sobre%20sus%20experiencias`} target="_blank" rel="noreferrer" aria-label="Hablar con Habib por WhatsApp"><WhatsAppLogo /><span>Habla con Habib</span></a>
+      <a className="floating-wa" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20informacion%20sobre%20una%20fiesta%20privada%20en%20Cartagena`} target="_blank" rel="noreferrer" aria-label="Hablar con Habib por WhatsApp"><WhatsAppLogo /><span>Habla con Habib</span></a>
     </main>
   );
 }

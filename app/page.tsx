@@ -156,6 +156,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="tiers section" id="niveles">
+        <div className="section-heading">
+          <div><p className="eyebrow gold">Niveles de experiencia</p><h2>Elige cómo quieres<br /><em>vivirlo.</em></h2></div>
+          <p>Dos niveles de producción para adaptar la fiesta a la exclusividad, el servicio y el impacto que quieres ofrecer a tus invitados.</p>
+        </div>
+        <div className="tier-grid">
+          <article className="tier-card">
+            <span className="tier-index">01</span>
+            <p className="tier-label">Luxury</p>
+            <h3>Luxury</h3>
+            <p className="tier-description">Una celebración premium con todos los elementos esenciales coordinados por un solo equipo.</p>
+            <ul>
+              {["Escenario premium seleccionado","DJ, sonido y ambientación","Anfitriones y animación","Catering y barra premium","Producción y coordinación integral"].map(item => <li key={item}><Icon name="check" />{item}</li>)}
+            </ul>
+            <a className="button button-outline" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20la%20experiencia%20Luxury`} target="_blank" rel="noreferrer">Cotizar Luxury <Icon name="arrow" /></a>
+          </article>
+          <article className="tier-card ultra">
+            <span className="tier-index">02</span>
+            <p className="tier-label">Ultra Luxury</p>
+            <span className="tier-badge">Máxima exclusividad</span>
+            <h3>Ultra Luxury</h3>
+            <p className="tier-description">Una producción completamente a medida, con atención privada y detalles extraordinarios de principio a fin.</p>
+            <ul>
+              {["Selección prioritaria del escenario","Diseño y decoración de alto impacto","Entretenimiento y talentos especiales","Gastronomía y bebidas de categoría superior","Concierge y coordinación privada"].map(item => <li key={item}><Icon name="check" />{item}</li>)}
+            </ul>
+            <a className="button" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20cotizar%20la%20experiencia%20Ultra%20Luxury`} target="_blank" rel="noreferrer">Cotizar Ultra Luxury <Icon name="arrow" /></a>
+          </article>
+        </div>
+      </section>
+
       <section className="included section" id="incluye">
         <div className="included-photo"><img src="/images/party-production-catering.png" alt="Fiesta privada producida por Tours Habib con animación, coctelería y catering" /><span className="frame frame-one" /><span className="frame frame-two" /></div>
         <div className="included-copy">
@@ -205,7 +235,7 @@ export default function Home() {
         </div>
         <form className="contact-form" onSubmit={sendForm}>
           <div className="field-row"><label>Nombre completo<input required name="nombre" placeholder="Tu nombre" /></label><label>Fecha del evento<input name="fecha" type="date" /></label></div>
-          <div className="field-row"><label>Número de invitados<input required min="1" name="invitados" type="number" placeholder="Ej. 12" /></label><label>Tipo de experiencia<select name="experiencia" defaultValue=""><option value="" disabled>Selecciona una opción</option><option>Fiesta privada en yate</option><option>Fiesta privada en isla</option><option>Fiesta privada en finca</option><option>Fiesta privada en cabaña</option><option>Quiero que me recomienden un escenario</option></select></label></div>
+          <div className="field-row"><label>Número de invitados<input required min="1" name="invitados" type="number" placeholder="Ej. 12" /></label><label>Tipo de experiencia<select name="experiencia" defaultValue=""><option value="" disabled>Selecciona una opción</option><option>Experiencia Luxury</option><option>Experiencia Ultra Luxury</option><option>Fiesta privada en yate</option><option>Fiesta privada en isla</option><option>Fiesta privada en finca</option><option>Fiesta privada en cabaña</option><option>Quiero que me recomienden un escenario</option></select></label></div>
           <label>Cuéntanos tu idea<textarea name="mensaje" rows={4} placeholder="¿Qué quieres celebrar? ¿Tienes alguna idea especial?" /></label>
           <button className="button form-button" type="submit">Enviar por WhatsApp <Icon name="arrow" /></button>
           <small className="privacy">{sent ? "WhatsApp abierto. Envía el mensaje para completar tu solicitud." : "Al enviar, abriremos WhatsApp con los datos de tu solicitud."}</small>
@@ -214,7 +244,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-main">
-          <a className="brand footer-brand" href="#inicio"><span className="brand-mark">TH</span><span><b>TOURS HABIB</b><small>PRIVATE YACHT PARTIES</small></span></a>
+          <a className="brand footer-brand" href="#inicio"><span className="brand-mark">TH</span><span><b>TOURS HABIB</b><small>PRIVATE PARTY EXPERIENCES</small></span></a>
           <p>Producción de fiestas privadas en yates, islas, fincas y cabañas en Cartagena de Indias.</p>
           <nav><a href="#experiencias">Experiencias</a><a href="#incluye">Qué incluye</a><a href="#galeria">Galería</a><a href="#resenas">Reseñas</a><a href="#contacto">Contacto</a></nav>
         </div>

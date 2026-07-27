@@ -53,6 +53,13 @@ const pairs: [string, string][] = [
   ["Fiesta privada en isla","Private island party"],["Fiesta privada en finca","Private villa party"],["Fiesta privada en cabaña","Private cabin party"],["Quiero que me recomienden un escenario","I would like a setting recommendation"],
   ["Producción de fiestas privadas en yates, islas, fincas y cabañas en Cartagena de Indias.","Private party production on yachts, islands, at villas and in luxury cabins in Cartagena de Indias."],
   ["Fiesta privada de lujo en una isla cerca de Cartagena","Luxury private party on an island near Cartagena"],["Fiesta privada con piscina en una finca de lujo en Cartagena","Private pool party at a luxury villa in Cartagena"],["Fiesta privada nocturna en una cabaña tropical de lujo","Private night party at a luxury tropical cabin"],["Animación premium en una fiesta privada","Premium entertainment at a private party"],["Catering y celebración privada producida por Tours Habib","Catering and private celebration produced by Tours Habib"],
+  ["Niveles de experiencia","Experience levels"],["Elige cómo quieres","Choose how you want"],["vivirlo.","to experience it."],
+  ["Dos niveles de producción para adaptar la fiesta a la exclusividad, el servicio y el impacto que quieres ofrecer a tus invitados.","Two production levels to tailor the party to the exclusivity, service and impact you want to offer your guests."],
+  ["Una celebración premium con todos los elementos esenciales coordinados por un solo equipo.","A premium celebration with every essential element coordinated by one team."],
+  ["Escenario premium seleccionado","Selected premium setting"],["DJ, sonido y ambientación","DJ, sound and styling"],["Anfitriones y animación","Hosts and entertainment"],["Catering y barra premium","Premium catering and bar"],["Producción y coordinación integral","Full production and coordination"],["Cotizar Luxury","Plan Luxury"],
+  ["Máxima exclusividad","Ultimate exclusivity"],["Una producción completamente a medida, con atención privada y detalles extraordinarios de principio a fin.","A completely bespoke production with private attention and extraordinary details from beginning to end."],
+  ["Selección prioritaria del escenario","Priority setting selection"],["Diseño y decoración de alto impacto","High-impact design and styling"],["Entretenimiento y talentos especiales","Entertainment and special talent"],["Gastronomía y bebidas de categoría superior","Elevated dining and drinks"],["Concierge y coordinación privada","Private concierge and coordination"],["Cotizar Ultra Luxury","Plan Ultra Luxury"],
+  ["Experiencia Luxury","Luxury experience"],["Experiencia Ultra Luxury","Ultra Luxury experience"],
 
 ];
 

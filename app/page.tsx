@@ -36,9 +36,16 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    let active = true;
     const saved = window.localStorage.getItem("tours-habib-language") as Language | null;
     const detected: Language = navigator.language.toLowerCase().startsWith("en") ? "en" : "es";
-    setLanguage(saved === "es" || saved === "en" ? saved : detected);
+    const initialLanguage = saved === "es" || saved === "en" ? saved : detected;
+    queueMicrotask(() => {
+      if (active) setLanguage(initialLanguage);
+    });
+    return () => {
+      active = false;
+    };
   }, []);
 
   useEffect(() => {
@@ -251,7 +258,7 @@ export default function Home() {
         <div className="footer-bottom"><span>© {new Date().getFullYear()} Tours Habib. Todos los derechos reservados.</span><span>Cartagena · Colombia</span></div>
       </footer>
 
-      <a className="floating-wa" href={`${whatsapp}?text=Hola%20Habib,%20quiero%20informacion%20sobre%20una%20fiesta%20privada%20en%20Cartagena`} target="_blank" rel="noreferrer" aria-label="Hablar con Habib por WhatsApp"><WhatsAppLogo /><span>Habla con Habib</span></a>
+      <a className={`floating-wa${headerScrolled ? " visible" : ""}`} href={`${whatsapp}?text=Hola%20Habib,%20quiero%20informacion%20sobre%20una%20fiesta%20privada%20en%20Cartagena`} target="_blank" rel="noreferrer" aria-label="Hablar con Habib por WhatsApp"><WhatsAppLogo /><span>Habla con Habib</span></a>
     </main>
   );
 }

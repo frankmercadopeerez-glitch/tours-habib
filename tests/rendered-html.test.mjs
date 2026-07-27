@@ -26,10 +26,11 @@ test("keeps the Tours Habib conversion content in the source", async () => {
   assert.match(page, /WhatsAppLogo/);
   assert.match(page, /yates, islas, fincas y cabañas/);
   assert.match(page, /Anfitriones y animadores/);
-  assert.match(page, /hero-private-party\.png|hero-image/);
-  assert.match(page, /island-party\.png/);
-  assert.match(page, /finca-party\.png/);
-  assert.match(page, /cabin-party\.png/);
+  assert.match(page, /hero-private-party\.webp|hero-image/);
+  assert.match(page, /island-party\.webp/);
+  assert.match(page, /finca-party\.webp/);
+  assert.match(page, /cabin-party\.webp/);
+  assert.doesNotMatch(page, /\.png/);
   assert.match(page, /Ultra Luxury/);
   assert.match(page, /Experiencia Luxury/);
   assert.doesNotMatch(page, /Alquiler de yates y botes/);

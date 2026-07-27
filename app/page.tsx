@@ -130,25 +130,25 @@ export default function Home() {
         </div>
         <div className="service-grid">
           <article className="service-card">
-            <img src="/images/night-party.png" alt="Fiesta privada nocturna en un yate frente a Cartagena" />
+            <img src="/images/night-party.webp" alt="Fiesta privada nocturna en un yate frente a Cartagena" loading="lazy" decoding="async" />
             <div className="card-overlay" />
             <span className="number">01</span><span className="tag">Experiencia insignia</span>
             <div className="card-copy"><h3>Fiestas privadas<br />en yates</h3><p>Una producción de lujo sobre el mar con DJ, animación, catering, bebidas y coordinación completa.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20privada%20en%20yate`} target="_blank" rel="noreferrer">Celebrar en el mar <Icon name="arrow" /></a></div>
           </article>
           <article className="service-card">
-            <img src="/images/island-party.png" alt="Fiesta privada de lujo en una isla cerca de Cartagena" />
+            <img src="/images/island-party.webp" alt="Fiesta privada de lujo en una isla cerca de Cartagena" loading="lazy" decoding="async" />
             <div className="card-overlay" />
             <span className="number">02</span>
             <div className="card-copy"><h3>Fiestas privadas<br />en islas</h3><p>Playas reservadas, música, cócteles y montaje tropical para celebrar con total libertad frente al Caribe.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20privada%20en%20una%20isla`} target="_blank" rel="noreferrer">Celebrar en una isla <Icon name="arrow" /></a></div>
           </article>
           <article className="service-card">
-            <img src="/images/finca-party.png" alt="Fiesta privada con piscina en una finca de lujo en Cartagena" />
+            <img src="/images/finca-party.webp" alt="Fiesta privada con piscina en una finca de lujo en Cartagena" loading="lazy" decoding="async" />
             <div className="card-overlay" />
             <span className="number">03</span>
             <div className="card-copy"><h3>Fiestas privadas<br />en fincas</h3><p>Piscina, zonas amplias y una producción completa para cumpleaños, despedidas y celebraciones sin límites.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20privada%20en%20una%20finca`} target="_blank" rel="noreferrer">Celebrar en una finca <Icon name="arrow" /></a></div>
           </article>
           <article className="service-card">
-            <img src="/images/cabin-party.png" alt="Fiesta privada nocturna en una cabaña tropical de lujo" />
+            <img src="/images/cabin-party.webp" alt="Fiesta privada nocturna en una cabaña tropical de lujo" loading="lazy" decoding="async" />
             <div className="card-overlay" />
             <span className="number">04</span>
             <div className="card-copy"><h3>Fiestas privadas<br />en cabañas</h3><p>Un ambiente íntimo entre naturaleza, iluminación, música, gastronomía y alojamiento para vivir la noche a tu ritmo.</p><a href={`${whatsapp}?text=Hola%20Habib,%20quiero%20una%20fiesta%20privada%20en%20una%20cabana`} target="_blank" rel="noreferrer">Celebrar en una cabaña <Icon name="arrow" /></a></div>
@@ -187,7 +187,7 @@ export default function Home() {
       </section>
 
       <section className="included section" id="incluye">
-        <div className="included-photo"><img src="/images/party-production-catering.png" alt="Fiesta privada producida por Tours Habib con animación, coctelería y catering" /><span className="frame frame-one" /><span className="frame frame-two" /></div>
+        <div className="included-photo"><img src="/images/party-production-catering.webp" alt="Fiesta privada producida por Tours Habib con animación, coctelería y catering" loading="lazy" decoding="async" /><span className="frame frame-one" /><span className="frame frame-two" /></div>
         <div className="included-copy">
           <p className="eyebrow gold">Donde quieras celebrar</p>
           <h2>Detalles impecables.<br /><em>Cero preocupaciones.</em></h2>
@@ -209,10 +209,10 @@ export default function Home() {
       <section className="gallery" id="galeria">
         <div className="gallery-heading"><p className="eyebrow">Momentos Habib</p><h2>Cada escenario cambia.<br /><em>La energía permanece.</em></h2></div>
         <div className="gallery-grid">
-          <img src="/images/hero-yacht-party.png" alt="Amigos celebrando al atardecer en un yate en Cartagena" />
-          <img src="/images/night-party.png" alt="Fiesta nocturna en yate con Cartagena iluminada" />
-          <img src="/images/party-hosts.png" alt="Animación premium en una fiesta privada" />
-          <img src="/images/private-event.png" alt="Catering y celebración privada producida por Tours Habib" />
+          <img src="/images/hero-yacht-party.webp" alt="Amigos celebrando al atardecer en un yate en Cartagena" loading="lazy" decoding="async" />
+          <img src="/images/night-party.webp" alt="Fiesta nocturna en yate con Cartagena iluminada" loading="lazy" decoding="async" />
+          <img src="/images/party-hosts.webp" alt="Animación premium en una fiesta privada" loading="lazy" decoding="async" />
+          <img src="/images/private-event.webp" alt="Catering y celebración privada producida por Tours Habib" loading="lazy" decoding="async" />
         </div>
       </section>
 

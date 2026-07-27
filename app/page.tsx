@@ -24,8 +24,16 @@ const Icon = ({ name }: { name: "arrow" | "check" | "star" | "menu" | "close" })
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [headerScrolled, setHeaderScrolled] = useState(false);
   const [sent, setSent] = useState(false);
   const [language, setLanguage] = useState<Language>("es");
+
+  useEffect(() => {
+    const updateHeader = () => setHeaderScrolled(window.scrollY > 24);
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    return () => window.removeEventListener("scroll", updateHeader);
+  }, []);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("tours-habib-language") as Language | null;
@@ -61,7 +69,7 @@ export default function Home() {
 
   return (
     <main>
-      <header className="header">
+      <header className={`header${headerScrolled ? " scrolled" : ""}`}>
         <a className="brand" href="#inicio" aria-label="Tours Habib, inicio">
           <span className="brand-mark">TH</span>
           <span><b>TOURS HABIB</b><small>PRIVATE PARTY EXPERIENCES</small></span>
